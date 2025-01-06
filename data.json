@@ -2,8 +2,8 @@
   {
     "product": "Headphone",
     "details": {
-      "image": "image.png",
-      "HTS Code": "8517.62.0090",
+      "image": "./assets/headphones.png",
+      "HTS_Code": "8517.62.0090",
       "purchaseOrder": "PO567890123",
       "quantity": 500,
       "MainParts": 20,

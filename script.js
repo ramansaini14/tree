@@ -1,40 +1,59 @@
-(async function () {
-    await fetch('data.json')
-        .then(response => response.json())
-        .then(data => console.log(data[0]))
-        .catch(err => console.log('Error fetching data:', err));
+// (async function () {
+//     await fetch('data.json')
+//         .then(response => response.json())
+//         .then(data => console.log(data[0]))
+//         .catch(err => console.log('Error fetching data:', err));
 
-})();
+// })();
 
-const mainContainer = () => {
+$.ajax(
+    {
+        url: "./data.json",
+        type: 'GET',
+        success: function data(myData) {
+            // console.log(myData);
+            mainContainer(myData);
+            box(myData);
+        }
+    }
+)
+
+
+const mainContainer = (data) => {
+    let md = data[0];
     let mainBox = `<div class="inner1">
-          <h3>Headphone</h3>
-          <img class="img" src="./assets/headphones.png" alt="" />
+          <h3>${md.product}</h3>
+          <img class="img" src="${md.details.image}" alt="" />
         </div>
         <div class="inner2">
           <p class="light">HTS Code</p>
-          <p>8517.62.0090</p>
+          <p>${md.details.HTS_Code}</p>
 
           <p class="light">Purchase Orders</p>
-          <p>PO567890123</p>
+          <p>${md.details.purchaseOrder}</p>
 
           <div class="twoItems">
             <div class="innerTI">
               <p class="light">Quantity</p>
-              <p>500</p>
+              <p>${md.details.quantity}</p>
             </div>
             <div class="innerTI">
               <p class="light">Main Parts</p>
-              <p>20</p>
+              <p>${md.details.MainParts}</p>
             </div>
           </div>
         </div>`;
-    return mainBox;
+    $('.containerElement').append(mainBox);
+    $('.containerElement').after(`<div class="smBox">
+                        <img class="text-file-img" src="./assets/file-text.png" alt="">
+                        <p>View ${md.details.children[0].documentsCount} documents</p>
+                    </div> `);
 }
-const box = () => {
+const box = (data) => {
+    let md = data[0].details.children[0];
     let htmlBox = `<div class="subBox" style="display: inline-block;">
                 <div class="bluebox">
-                    <h3>Product Assembly</h3>
+                    <h3>${md.child1Level[0].title}</h3>
                     <div class="bundle">
                         <img class="icon" src="./assets/shield.png" alt="">
                         <p>12</p>
@@ -116,12 +135,12 @@ const withSeeMoreBox = () => {
 // }
 
 // Appends 
-const Main = mainContainer();
-$('.container').append(Main);
-$('.container').after(`<div class="smBox">
-                <img class="text-file-img" src="./assets/file-text.png" alt="">
-                <p>View $# documents</p>
-            </div> `);
+// const Main = mainContainer();
+// $('.containerElement').append(Main);
+// $('.containerElement').after(`<div class="smBox">
+//                 <img class="text-file-img" src="./assets/file-text.png" alt="">
+//                 <p>View $# documents</p>
+//             </div> `);
 
 // Notification Box for documents 
 // const smallNotification = smallNotifier();
@@ -194,13 +213,13 @@ for (let i = 1; i <= 8; i++) {
 // Click Effects 
 // Main Box Toggle Effect  
 $('.smBox:first').addClass('smBoxContainer');
-$(".container").on("click", () => {
+$(".containerElement").on("click", () => {
     $('.subBox').slideToggle();
     $('.smBox').slideToggle();
 });
 
 // One Child Box Toggle 
-$('.child + .smBox').addClass('.smBoxChild');
+$('.child + .smBox').addClass('smBoxChild');
 $('.child').on("click", function () {
     $('.subChildren').slideToggle();
     $('.smBoxChild').slideToggle();
