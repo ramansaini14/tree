@@ -1,3 +1,11 @@
+(async function () {
+    await fetch('data.json')
+        .then(response => response.json())
+        .then(data => console.log(data[0]))
+        .catch(err => console.log('Error fetching data:', err));
+
+})();
+
 const mainContainer = () => {
     let mainBox = `<div class="inner1">
           <h3>Headphone</h3>
@@ -199,12 +207,12 @@ $('.child').on("click", function () {
 });
 
 // Left for later 
-for(let i=1; i<=8; i++){
-$(`.lev${i}`).on("click", function () {
-    $('.smBox').slideToggle();
-    $(`.subContainer${i}`).slideToggle();
-})
-}
+// for(let i=1; i<=8; i++){
+// $(`.lev${i}`).on("click", function () {
+//     $('.smBox').slideToggle();
+//     $(`.subContainer${i}`).slideToggle();
+// })
+// }
 
 
 // for(let i=1; i<=4; i++){
@@ -225,4 +233,13 @@ $(`.lev${i}`).on("click", function () {
 //         parent.find(".subContainer").slideToggle();
 //     });
 // }
+
+for (let i = 1; i <= 4; i++) {
+    $(document).on("click", ".seeMore", function () {
+        const parent = $(this).closest(`.cb${i}`);
+        parent.find(".smBox").slideToggle();
+        parent.find(".subContainer").slideToggle();
+        parent.find(".allChildBoxes").slideToggle();
+    });
+}
 
