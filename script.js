@@ -2,10 +2,11 @@ $.ajax(
     {
         url: "./data.json",
         type: 'GET',
-        success: function data(myData) {
-            // console.log(myData);
+        success: function (myData) {
+            console.log(myData);
             mainContainer(myData);
-            box(myData);
+            box(myData,0);
+
         }
     }
 )
@@ -35,40 +36,41 @@ const mainContainer = (data) => {
           </div>
         </div>`;
     $('.containerElement').append(mainBox);
-    $('.containerElement').after(`<div class="smBox">
-                        <img class="text-file-img" src="./assets/file-text.png" alt="">
-                        <p>View ${md.details.children[0].documentsCount} documents</p>
-                    </div> `);
+    // $('.containerElement').after(`<div class="smBox">
+    //                     <img class="text-file-img" src="./assets/file-text.png" alt="">
+    //                     <p>View ${md.details.children[0].documentsCount} documents</p>
+    //                 </div> `);
 }
-const box = (data) => {
-    let md = data[0].details.children[0];
+
+const box = (data, level) => {
+    let md = data[0].details.children[level];
     let htmlBox = `<div class="subBox" style="display: inline-block;">
                 <div class="bluebox">
-                    <h3>${md.child1Level[0].title}</h3>
+                    <h3>${md.child1Level[level].title}</h3>
                     <div class="bundle">
-                        <img class="icon" src="${md.child1Level[0].shieldImage}" alt="">
-                        <p>${md.child1Level[0].shieldValue}</p>
+                        <img class="icon" src="${md.child1Level[level].shieldImage}" alt="">
+                        <p>${md.child1Level[level].shieldValue}</p>
                     </div>
                 </div>
                 <div class="whiteBox">
                     <div class="flex">
                         <div class="left">
-                            <img src="${md.child1Level[0].flagImage}" alt="">
-                            <p>${md.child1Level[0].company1name}</p>
+                            <img src="${md.child1Level[level].flagImage}" alt="">
+                            <p>${md.child1Level[level].company1name}</p>
                         </div>
                         <div class="right">
-                            <img class="icon" src="${md.child1Level[0].editLogo}" alt="">
+                            <img class="icon" src="${md.child1Level[level].editLogo}" alt="">
                             <p>Edit</p>
                         </div>
                     </div>
 
                     <div class="flex">
                         <div class="left">
-                            <img src="${md.child1Level[0].flagImage}" alt="">
-                            <p>${md.child1Level[0].company2name}</p>
+                            <img src="${md.child1Level[level].flagImage}" alt="">
+                            <p>${md.child1Level[level].company2name}</p>
                         </div>
                         <div class="right">
-                            <img class="icon" src="${md.child1Level[0].editLogo}" alt="">
+                            <img class="icon" src="${md.child1Level[level].editLogo}" alt="">
                             <p>Edit</p>
                         </div>
                     </div>

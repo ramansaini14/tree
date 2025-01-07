@@ -26,8 +26,8 @@
                   "shieldImage": "./assets/shield.png",
                   "flagImage": "./assets/au.png",
                   "editLogo": "./assets/edit.png",
-                  "company1name": "Company 1 Ltd.",
-                  "company2name": "Company 2 Ltd.",
+                  "company1name": "Company 3 Ltd.",
+                  "company2name": "Company 4 Ltd.",
                   "seeMoreLogo": "./assets/down.png",
                   "seeLessLogo": "./assets/up.png",
                   "child3Level": [
@@ -69,14 +69,12 @@
                           "shieldImage": "./assets/shield.png",
                           "company1name": "Company 1 Ltd.",
                           "company2name": "Company 2 Ltd.",
-                          "child5Level": [
-                            {
-                              "title": "Iron Smelter & Mine",
-                              "shieldValue": 12,
-                              "shieldImage": "./assets/shield.png",
-                              "value": "No information provided"
-                            }
-                          ]
+                          "child5Level": {
+                            "title": "Iron Smelter & Mine",
+                            "shieldValue": 12,
+                            "shieldImage": "./assets/shield.png",
+                            "value": "No information provided"
+                          }
                         }
                       ]
                     }
@@ -118,10 +116,10 @@
                   ]
                 },
                 {
-                  "title": "Product Part",
+                  "title": "Product Part IS OK",
                   "shieldValue": 30,
-                  "flagImage":"./assets/au.png",
-                  "editLogo":"./assets/edit.png",
+                  "flagImage": "./assets/au.png",
+                  "editLogo": "./assets/edit.png",
                   "company1name": "Company 1 Ltd.",
                   "company2name": "Company 2 Ltd.",
                   "seeMoreLogo": "./assets/down.png",
@@ -155,14 +153,14 @@
                 {
                   "title": "Product Part",
                   "shieldValue": 30,
-                  "shieldImage":"./assets/shield.png",
-                  "flagImage":"./assets/au.png",
-                  "editLogo":"./assets/edit.png",
+                  "shieldImage": "./assets/shield.png",
+                  "flagImage": "./assets/au.png",
+                  "editLogo": "./assets/edit.png",
                   "company1name": "Company 1 Ltd.",
                   "company2name": "Company 2 Ltd.",
                   "seeMoreLogo": "./assets/down.png",
                   "productPartName": "Plastic Band2",
-                  "children": [
+                  "children": 
                     {
                       "manufacturers": [
                         {
@@ -172,27 +170,26 @@
                           "documentsForproofPrint": 15
                         },
                         {
-                          "processors": [
+                          "processors": 
                             {
                               "processorsCount": 9,
                               "proofPoints": 40,
                               "documents": 20
                             }
-                          ]
                         },
                         {
                           "rawMaterials": 7
                         }
                       ]
                     }
-                  ]
+                  
                 },
                 {
                   "title": "ProductPart",
                   "shieldValue": 30,
-                  "shieldImage":"./assets/shield.png",
-                  "flagImage":"./assets/au.png",
-                  "editLogo":"./assets/edit.png",
+                  "shieldImage": "./assets/shield.png",
+                  "flagImage": "./assets/au.png",
+                  "editLogo": "./assets/edit.png",
                   "company1name": "Company 1 Ltd.",
                   "company2name": "Company 2 Ltd.",
                   "seeMoreLogo": "./assets/down.png",
@@ -221,6 +218,7 @@
                       ]
                     }
                   ]
+
                 }
               ]
             }
