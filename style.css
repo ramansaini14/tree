@@ -186,7 +186,7 @@ main {
   gap: 40px;
   margin: 5px;
 }
-.cb4{
+.cb0{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,4 +199,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.subChildren > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 5px;
 }
