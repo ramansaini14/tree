@@ -137,9 +137,8 @@ function boxDataRec(data, iterator, type) {
   if (type == "l3") {
     for (let i = 0; i < iterator; i++) {
       let dataAccessor = data[0].childLevel1.child_l1Box1[0].child_l2Boxes[0].child_l3Boxes[i];
-      let parentIterator = data[0].childLevel1.child_l1Box1[0].child_l2Boxes.length;
-      // console.log(parentIterator);
       // console.log(dataAccessor.title);
+      if(dataAccessor.company1name){
       let l3Box = `<div class="subBox" style="display: inline-block;">
                 <div class="bluebox">
                     <h3>${dataAccessor.title}</h3>
@@ -171,20 +170,39 @@ function boxDataRec(data, iterator, type) {
                     </div>
                     </div>
                 </div>`;
-                for(let j=0; j<parentIterator; j++){
-                  $(`.cb${[j]}`).append(
-                    `<div class="subContainer">
-                      <div class="lev${2*(i+1)-2}">${l3Box}</div>
-                      <div class="lev${2*(i+1)}">${l3Box}</div>
-                    </div>`
-                  );
-                }
-                //   $(`.cb${i}`).append(`<div class="subContainer">
-                //   <div class="lev${2*(i+1)-2}">${l3Box}</div>
-                //   <div class="lev${2*(i+1)}">${l3Box}</div>
-                //  </div>
-                // `);
-
+                $(`.cb${[i]}`).append(
+                  `<div class="subContainer">
+                    <div class="lev${2*(i+1)-2}">${l3Box}</div>
+                  </div>`
+                );
+              }
+      else{
+                let l3Box = `<div class="subBox" style="display: inline-block;">
+                <div class="bluebox">
+                    <h3>${dataAccessor.title}</h3>
+                    <div class="bundle">
+                        <img class="icon" src="${dataAccessor.shieldImage}" alt="">
+                        <p>${dataAccessor.shieldValue}</p>
+                    </div>
+                </div>
+                <div class="whiteBox">
+                    <div class="flex">
+                        <div class="left">
+                            <p>${dataAccessor.value}</p>
+                        </div>
+                        <div class="right">
+                            <img class="icon" src="${dataAccessor.editLogo}" alt="">
+                            <p>Add</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>`;
+                $('.subContainer').append(
+                    `<div class="lev${2*i-1}">${l3Box}</div>`
+                );
+              }
+      
     }
+    
   }
 }
