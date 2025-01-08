@@ -12,7 +12,7 @@ $.ajax(
 function showData(data){
 
     for (let i = 1; i < data.length; i++) {
-        let type = "";
+        let type = 0;
 
         if(i == 1){
             type = "desgin_one";
