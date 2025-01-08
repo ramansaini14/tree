@@ -1,0 +1,191 @@
+[
+  {
+    "product": "Headphone",
+    "details": {
+      "image": "./assets/headphones.png",
+      "HTS_Code": "8517.62.0090",
+      "purchaseOrder": "PO567890123",
+      "quantity": 500,
+      "MainParts": 20,
+      "children": [
+        {
+          "documentsCount": 24,
+          "child1Level": [
+            {
+              "title": "Product assembly",
+              "shieldValue": 12,
+              "company1name": "Company 1 Ltd.",
+              "company2name": "Company 2 Ltd.",
+              "child2Level": [
+                {
+                  "title": "Magnetic Steel Manufacturing",
+                  "shieldValue": 12,
+                  "company1name": "Company 1 Ltd.",
+                  "company2name": "Company 2 Ltd.",
+                  "child3Level": [
+                    {
+                      "documentsCount": 24,
+                      "child4Level": [
+                        {
+                          "title": "Rare Earth Manufacturer",
+                          "shieldValue": 12,
+                          "company1name": "Company 1 Ltd.",
+                          "company2name": "Company 2 Ltd."
+                        },
+                        {
+                          "title": "Steel Trader",
+                          "shieldValue": 12,
+                          "value": "No information provided"
+                        }
+                      ]
+                    },
+                    {
+                      "documentsCount": 24,
+                      "child4Level": [
+                        {
+                          "title": "Rare Earth Mine",
+                          "shieldValue": 12,
+                          "company1name": "Company 1 Ltd.",
+                          "company2name": "Company 2 Ltd."
+                        },
+                        {
+                          "title": "Pure iron Manufacturer",
+                          "shieldValue": 12,
+                          "company1name": "Company 1 Ltd.",
+                          "company2name": "Company 2 Ltd.",
+                          "child5Level": [
+                            {
+                              "title": "Iron Smelter & Mine",
+                              "shieldValue": 12,
+                              "value": "No information provided"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "ProductPart",
+                  "shieldValue": 30,
+                  "productPartName": "Copper Coil",
+                  "children": [
+                    {
+                      "manufacturers": [
+                        {
+                          "ManufacturersCount": 6,
+                          "proofPoints": 40,
+                          "documents": 20,
+                          "documentsForproofPrint": 15
+                        },
+                        {
+                          "processors": [
+                            {
+                              "processorsCount": 9,
+                              "proofPoints": 40,
+                              "documents": 20
+                            }
+                          ]
+                        },
+                        {
+                          "rawMaterials": 7
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "ProductPart",
+                  "shieldValue": 30,
+                  "productPartName": "Plastic Band",
+                  "children": [
+                    {
+                      "manufacturers": [
+                        {
+                          "ManufacturersCount": 6,
+                          "proofPoints": 40,
+                          "documents": 20,
+                          "documentsForproofPrint": 15
+                        },
+                        {
+                          "processors": [
+                            {
+                              "processorsCount": 9,
+                              "proofPoints": 40,
+                              "documents": 20
+                            }
+                          ]
+                        },
+                        {
+                          "rawMaterials": 7
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "ProductPart",
+                  "shieldValue": 30,
+                  "productPartName": "Plastic Band",
+                  "children": [
+                    {
+                      "manufacturers": [
+                        {
+                          "ManufacturersCount": 6,
+                          "proofPoints": 40,
+                          "documents": 20,
+                          "documentsForproofPrint": 15
+                        },
+                        {
+                          "processors": [
+                            {
+                              "processorsCount": 9,
+                              "proofPoints": 40,
+                              "documents": 20
+                            }
+                          ]
+                        },
+                        {
+                          "rawMaterials": 7
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "ProductPart",
+                  "shieldValue": 30,
+                  "productPartName": "Plastic Band",
+                  "children": [
+                    {
+                      "manufacturers": [
+                        {
+                          "ManufacturersCount": 6,
+                          "proofPoints": 40,
+                          "documents": 20,
+                          "documentsForproofPrint": 15
+                        },
+                        {
+                          "processors": [
+                            {
+                              "processorsCount": 9,
+                              "proofPoints": 40,
+                              "documents": 20
+                            }
+                          ]
+                        },
+                        {
+                          "rawMaterials": 7
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
