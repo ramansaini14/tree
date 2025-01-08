@@ -84,7 +84,7 @@ function boxDataRec(data, iterator, type) {
       $(".child").append(l1Box);
     }
   }
-  //   Level 2 -- Pending 
+  //   Level 2 -- Pending Leaving Data of visual timeline 
   if (type == "l2") {
     for (let i = 0; i < iterator; i++) {
       let dataAccessor = data[0].childLevel1.child_l1Box1[0].child_l2Boxes[i];
@@ -133,7 +133,7 @@ function boxDataRec(data, iterator, type) {
       $(".subChildren").append(`<div class="cb${i}">${l2Box}</div>`);
     }
   }
-  //   Level 3
+  //   Level 3 -- Still Pending Data Appends
   if (type == "l3") {
     for (let i = 0; i < iterator; i++) {
       let dataAccessor = data[0].childLevel1.child_l1Box1[0].child_l2Boxes[0].child_l3Boxes[i];
@@ -201,8 +201,6 @@ function boxDataRec(data, iterator, type) {
                     `<div class="lev${2*i-1}">${l3Box}</div>`
                 );
               }
-      
     }
-    
   }
 }
