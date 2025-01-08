@@ -27,7 +27,8 @@
           "company2name": "Company 4 Ltd.",
           "seeMoreLogo": "./assets/down.png",
           "seeLessLogo": "./assets/up.png",
-          "child_l3Boxes": [
+          "child_l3Boxes": 
+          [
             {
               "documentsCount": 24,
               "title": "Rare Earth Manufacturer L4",
@@ -158,6 +159,5 @@
         }
     ]
     }]
-
   }
 }]
