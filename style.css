@@ -8,6 +8,7 @@ html,
 body {
   display: flex;
   justify-content: center;
+  /* overflow: scroll; */
 }
 
 .containerElement {
@@ -17,6 +18,7 @@ body {
   justify-content: space-between;
   margin-top: 40px;
   border: 1px solid black;
+  /* overflow: scroll; */
 }
 
 .inner1 {
@@ -186,7 +188,7 @@ main {
   gap: 40px;
   margin: 5px;
 }
-.cb4{
+.cb0{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,4 +201,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.subChildren > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 5px;
 }

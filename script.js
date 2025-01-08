@@ -1,23 +1,15 @@
-// (async function () {
-//     await fetch('data.json')
-//         .then(response => response.json())
-//         .then(data => console.log(data[0]))
-//         .catch(err => console.log('Error fetching data:', err));
-
-// })();
-
 $.ajax(
     {
         url: "./data.json",
         type: 'GET',
-        success: function data(myData) {
-            // console.log(myData);
+        success: function (myData) {
+            console.log(myData);
             mainContainer(myData);
-            box(myData);
+            box(myData,0);
+
         }
     }
 )
-
 
 const mainContainer = (data) => {
     let md = data[0];
@@ -44,222 +36,166 @@ const mainContainer = (data) => {
           </div>
         </div>`;
     $('.containerElement').append(mainBox);
-    $('.containerElement').after(`<div class="smBox">
-                        <img class="text-file-img" src="./assets/file-text.png" alt="">
-                        <p>View ${md.details.children[0].documentsCount} documents</p>
-                    </div> `);
+    // $('.containerElement').after(`<div class="smBox">
+    //                     <img class="text-file-img" src="./assets/file-text.png" alt="">
+    //                     <p>View ${md.details.children[0].documentsCount} documents</p>
+    //                 </div> `);
 }
-const box = (data) => {
-    let md = data[0].details.children[0];
+
+const box = (data, level) => {
+    let md = data[0].details.children[level];
     let htmlBox = `<div class="subBox" style="display: inline-block;">
                 <div class="bluebox">
-                    <h3>${md.child1Level[0].title}</h3>
+                    <h3>${md.child1Level[level].title}</h3>
                     <div class="bundle">
-                        <img class="icon" src="./assets/shield.png" alt="">
-                        <p>12</p>
+                        <img class="icon" src="${md.child1Level[level].shieldImage}" alt="">
+                        <p>${md.child1Level[level].shieldValue}</p>
                     </div>
                 </div>
                 <div class="whiteBox">
                     <div class="flex">
                         <div class="left">
-                            <img src="./assets/au.png" alt="">
-                            <p>Company 1 Ltd.</p>
+                            <img src="${md.child1Level[level].flagImage}" alt="">
+                            <p>${md.child1Level[level].company1name}</p>
                         </div>
                         <div class="right">
-                            <img class="icon" src="./assets/edit.png" alt="">
+                            <img class="icon" src="${md.child1Level[level].editLogo}" alt="">
                             <p>Edit</p>
                         </div>
                     </div>
 
                     <div class="flex">
                         <div class="left">
-                            <img src="./assets/au.png" alt="">
-                            <p>Company 2 Ltd.</p>
+                            <img src="${md.child1Level[level].flagImage}" alt="">
+                            <p>${md.child1Level[level].company2name}</p>
                         </div>
                         <div class="right">
-                            <img class="icon" src="./assets/edit.png" alt="">
+                            <img class="icon" src="${md.child1Level[level].editLogo}" alt="">
                             <p>Edit</p>
                         </div>
                     </div>
                 </div>
             </div>`;
-                    $('.child').append(htmlBox);
-                    $('.child').after(`<div class="smBox">
-                            <img class="text-file-img" src="./assets/file-text.png" alt="">
-                            <p>View $# documents</p>
-                        </div> `);
+    $('.child').append(htmlBox);
 
-                        for (let i = 1; i <= 8; i++) {
-                            const childBox1Class1 = 2 * i - 1;
-                            const childBox1Class2 = 2 * i;
-                            const subContainerIndex1 = 2 * i - 1;
-                            const subContainerIndex2 = 2 * i;
-                        
-                            $(`.cb${i}`).append(`
-                                <div class="smBox">
-                                    <img class="text-file-img" src="./assets/file-text.png" alt="">
-                                    <p>View ${i} documents</p>
-                                </div> 
-                                <div class="allChildBoxes" style="display:flex;">
-                                    <div class="subContainer${subContainerIndex1}" style="display:flex;">
-                                        <div class="level${childBox1Class1}">${htmlBox}</div>
-                                        <div class="level${childBox1Class2}">${htmlBox}</div>
-                                    </div>
-                                    <div class="subContainer${subContainerIndex2}" style="display:flex;">
-                                        <div class="level${childBox1Class1}">${htmlBox}</div>
-                                        <div class="level${childBox1Class2}">${htmlBox}</div>
-                                    </div>
-                                </div>
-                            `);
-                        }
-
-                        for (let i = 1; i <= 8; i++) {
-                            $(`.cb${i}`).append(`
-                                <div class="smBox">
-                                        <img class="text-file-img" src="./assets/file-text.png" alt="">
-                                        <p>View $# documents</p>
-                                    </div> 
-                                <div class="subContainer">
-                                    <div class="lev${2 * i - 1}">${htmlBox}</div>
-                                    <div class="lev${2 * i}">${htmlBox}</div>
-                                </div>
-                            `);
-                        }
-}
+    // HTML BOX FOR LEVELS 
+    // data[0].details.children[0];
 
 
-const withSeeMoreBox = () => {
-    let boxWithSeeMore = `
-    <div class="subBox" style="display: inline-block;">
-    <div class="bluebox">
-        <h3>Product Assembly</h3>
-        <div class="bundle">
-            <img class="icon" src="./assets/shield.png" alt="">
-            <p>12</p>
-        </div>
-    </div>
-    <div class="whiteBox">
-        <div class="flex">
-            <div class="left">
-                <img src="./assets/au.png" alt="">
-                <p>Company 1 Ltd.</p>
-            </div>
-            <div class="right">
-                <img class="icon" src="./assets/edit.png" alt="">
-                <p>Edit</p>
-            </div>
-        </div>
+    // for()
+    let newWAPI = md.child1Level[0].child2Level;
+    for (let i = 0; i < newWAPI.length; i++) {
 
-        <div class="flex">
-            <div class="left">
-                <img src="./assets/au.png" alt="">
-                <p>Company 2 Ltd.</p>
-            </div>
-            <div class="right">
-                <img class="icon" src="./assets/edit.png" alt="">
-                <p>Edit</p>
-            </div>
-        </div>
-    </div>
-                <div class="seeMore">
-                    <p>See Less</p>
-                    <img src="./assets/down.png" alt="">
+        let boxWithSeeMore = `
+            <div class="subBox" style="display: inline-block;">
+            <div class="bluebox">
+                <h3>${newWAPI[i].title}</h3>
+                <div class="bundle">
+                    <img class="icon" src="${newWAPI[i].shieldImage}" alt="">
+                    <p>${newWAPI[i].shieldValue}</p>
                 </div>
-</div>`;
-    return boxWithSeeMore;
+            </div>
+            <div class="whiteBox">
+                <div class="flex">
+                    <div class="left">
+                        <img src="${newWAPI[i].flagImage}" alt="">
+                        <p>${newWAPI[i].company1name}</p>
+                    </div>
+                    <div class="right">
+                        <img class="icon" src="${newWAPI[i].editLogo}" alt="">
+                        <p>Edit</p>
+                    </div>
+                </div>
+        
+                <div class="flex">
+                    <div class="left">
+                        <img src="${newWAPI[i].flagImage}" alt="">
+                        <p>${newWAPI[i].company2name}</p>
+                    </div>
+                    <div class="right">
+                        <img class="icon" src="${newWAPI[i].editLogo}" alt="">
+                        <p>Edit</p>
+                    </div>
+                </div>
+            </div>
+                        <div class="seeMore">
+                            <p class="changeText">See less</p>
+                            <img class="changeImage" src="${newWAPI[i].seeMoreLogo}" alt="">
+                        </div>
+        </div>`;
+        $('.subChildren').append(`<div class="cb${i}">${boxWithSeeMore}</div>`);
+
+    }
+
+    $(document).on("click", ".seeMore", function () {
+        let sel = $(this).find('.changeText');
+        let selImg = $(this).find('.changeImage');
+        let txt = sel.text();
+
+        if (txt === "See more") {
+            sel.text("See less");
+            selImg.attr("src", './assets/up.png');
+
+        }
+        if (txt === "See less") {
+            sel.text("See more");
+            selImg.attr("src", './assets/down.png');
+        }
+
+    })
+
+    for (let i = 0; i < 4; i++) {
+        $(document).closest(`.cb${i}`).append(`
+        <div class="subContainer">
+            <div class="lev${2 * i - 1}">${htmlBox}</div>
+            <div class="lev${2 * i}">${htmlBox}</div>
+        </div>
+    `);
+
+    }
+    // data[0].details.children[0];
+
+    for (let i = 0; i < 50; i++) {
+        const childBox1Class1 = 2 * i;
+        const childBox1Class2 = 2 * i + 1;
+
+        $(`.cb${i}`).append(`<div class="allChildBoxes" style="display:flex;">
+            <div class="subContainer${i}" style="display:flex;">
+                <div class="level${childBox1Class1}">${htmlBox}</div>
+                <div class="level${childBox1Class2}">${htmlBox}</div>
+            </div>
+
+        </div>
+        `);      
+
+    }
+    
+    $('.smBox:first').addClass('smBoxContainer');
+    $('.child + .smBox').addClass('smBoxChild');
+    for (let i = 0; i < newWAPI.length; i++) {
+        $(document).on("click", ".seeMore", function () {
+            const parent = $(this).closest(`.cb${i}`);
+            parent.find(".smBox").slideToggle();
+            parent.find(".subContainer").slideToggle();
+            parent.find(".allChildBoxes").slideToggle();
+        });
+    }
+
+
 }
-
-
-// const smallNotifier = () => {
-//     let smallNotifier =;
-//     return smallNotifier;
-// }
-
-// Appends 
-// const Main = mainContainer();
-// $('.containerElement').append(Main);
-// $('.containerElement').after(`<div class="smBox">
-//                 <img class="text-file-img" src="./assets/file-text.png" alt="">
-//                 <p>View $# documents</p>
-//             </div> `);
-
-// Notification Box for documents 
-// const smallNotification = smallNotifier();
-// $('.smBox').append(smallNotification);
-
-// Blue box 
-// const Box = box();
-
-// Looping through all 4 boxes with different classes 
-const SeeMoreBox = withSeeMoreBox();
-for (let i = 1; i <= 4; i++) {
-    $('.subChildren').append(`<div class="cb${i}">${SeeMoreBox}</div>`);
-}
-
-
-
-// for (let i = 1; i <= 8; i++) {
-//     $(`.cb${i}`).append(`
-//         <div class="smBox">
-//                 <img class="text-file-img" src="./assets/file-text.png" alt="">
-//                 <p>View $# documents</p>
-//             </div> 
-//         <div class="subContainer">
-//             <div class="last${2 * i - 1}">${Box}</div>
-//         </div>
-//     `);
-// }
-
 
 // Click Effects 
 // Main Box Toggle Effect  
-$('.smBox:first').addClass('smBoxContainer');
+
 $(".containerElement").on("click", () => {
     $('.subBox').slideToggle();
     $('.smBox').slideToggle();
 });
 
 // One Child Box Toggle 
-$('.child + .smBox').addClass('smBoxChild');
 $('.child').on("click", function () {
     $('.subChildren').slideToggle();
     $('.smBoxChild').slideToggle();
 });
 
-// Left for later 
-// for(let i=1; i<=8; i++){
-// $(`.lev${i}`).on("click", function () {
-//     $('.smBox').slideToggle();
-//     $(`.subContainer${i}`).slideToggle();
-// })
-// }
-
-
-// for(let i=1; i<=4; i++){
-//     $(document).ready(function () {
-//         $(`.cb${i}`).on("click", function (e) {
-//           e.stopPropagation();
-//           $(`.cb${i}`).find(".subContainer").slideToggle();
-//           $(`.cb${i}`).find(".smBox").slideToggle();
-//         });
-//       });
-
-// }
-
-// for(let i=1; i<=4; i++){
-//     $(document).on("click", ".seeMore", function () {
-//         const parent = $(this).closest(`.cb${i}`);
-//         parent.find(".smBox").slideToggle();
-//         parent.find(".subContainer").slideToggle();
-//     });
-// }
-
-for (let i = 1; i <= 4; i++) {
-    $(document).on("click", ".seeMore", function () {
-        const parent = $(this).closest(`.cb${i}`);
-        parent.find(".smBox").slideToggle();
-        parent.find(".subContainer").slideToggle();
-        parent.find(".allChildBoxes").slideToggle();
-    });
-}
 

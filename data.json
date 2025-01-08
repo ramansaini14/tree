@@ -1,191 +1,163 @@
-[
-  {
-    "product": "Headphone",
-    "details": {
-      "image": "./assets/headphones.png",
-      "HTS_Code": "8517.62.0090",
-      "purchaseOrder": "PO567890123",
-      "quantity": 500,
-      "MainParts": 20,
-      "children": [
+[{
+  "product": "Headphone",
+  "image": "./assets/headphones.png",
+  "HTS_Code": "8517.62.0090",
+  "purchaseOrder": "PO567890123",
+  "quantity": 500,
+  "MainParts": 20,
+  "childLevel1": {
+    "documentsCount": 24,
+    "child_l1Box1": [{
+      "title": "Product assembly L1",
+      "shieldImage": "./assets/shield.png",
+      "shieldValue": 12,
+      "flagImage": "./assets/au.png",
+      "company1name": "Company 1 Ltd.",
+      "company2name": "Company 2 Ltd.",
+      "editLogo": "./assets/edit.png",
+      "child_l2Boxes":[
         {
           "documentsCount": 24,
-          "child1Level": [
+          "title": "Magnetic Steel Manufacturing L2l",
+          "shieldValue": 12,
+          "shieldImage": "./assets/shield.png",
+          "flagImage": "./assets/au.png",
+          "editLogo": "./assets/edit.png",
+          "company1name": "Company 3 Ltd.",
+          "company2name": "Company 4 Ltd.",
+          "seeMoreLogo": "./assets/down.png",
+          "seeLessLogo": "./assets/up.png",
+          "child_l3Boxes": 
+          [
             {
-              "title": "Product assembly",
+              "documentsCount": 24,
+              "title": "Rare Earth Manufacturer L4",
               "shieldValue": 12,
+              "shieldImage": "./assets/shield.png",
+              "flagImage": "./assets/au.png",
+              "editLogo": "./assets/edit.png",
               "company1name": "Company 1 Ltd.",
               "company2name": "Company 2 Ltd.",
-              "child2Level": [
+              "child_l4Boxes":
+              [
                 {
-                  "title": "Magnetic Steel Manufacturing",
+                  "title": "Rare Earth Mine L4",
                   "shieldValue": 12,
+                  "shieldImage": "./assets/shield.png",
+                  "flagImage": "./assets/au.png",
+                  "editLogo": "./assets/edit.png",
+                  "company1name": "Company 1 Ltd.",
+                  "company2name": "Company 2 Ltd."
+                }
+              ]
+            },
+            {
+              "documentsCount": 24,
+              "title": "Steel Trader L4",
+              "shieldValue": 12,
+              "shieldImage": "./assets/shield.png",
+              "value": "No information provided",
+              "editLogo": "./assets/edit.png",
+              "child_l4Boxes":
+              [
+                {
+                  "title": "Pure iron Manufacturer L4",
+                  "shieldValue": 12,
+                  "shieldImage": "./assets/shield.png",
                   "company1name": "Company 1 Ltd.",
                   "company2name": "Company 2 Ltd.",
-                  "child3Level": [
+                  "child_l5Boxes": 
+                  [
                     {
-                      "documentsCount": 24,
-                      "child4Level": [
-                        {
-                          "title": "Rare Earth Manufacturer",
-                          "shieldValue": 12,
-                          "company1name": "Company 1 Ltd.",
-                          "company2name": "Company 2 Ltd."
-                        },
-                        {
-                          "title": "Steel Trader",
-                          "shieldValue": 12,
-                          "value": "No information provided"
-                        }
-                      ]
-                    },
-                    {
-                      "documentsCount": 24,
-                      "child4Level": [
-                        {
-                          "title": "Rare Earth Mine",
-                          "shieldValue": 12,
-                          "company1name": "Company 1 Ltd.",
-                          "company2name": "Company 2 Ltd."
-                        },
-                        {
-                          "title": "Pure iron Manufacturer",
-                          "shieldValue": 12,
-                          "company1name": "Company 1 Ltd.",
-                          "company2name": "Company 2 Ltd.",
-                          "child5Level": [
-                            {
-                              "title": "Iron Smelter & Mine",
-                              "shieldValue": 12,
-                              "value": "No information provided"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "ProductPart",
-                  "shieldValue": 30,
-                  "productPartName": "Copper Coil",
-                  "children": [
-                    {
-                      "manufacturers": [
-                        {
-                          "ManufacturersCount": 6,
-                          "proofPoints": 40,
-                          "documents": 20,
-                          "documentsForproofPrint": 15
-                        },
-                        {
-                          "processors": [
-                            {
-                              "processorsCount": 9,
-                              "proofPoints": 40,
-                              "documents": 20
-                            }
-                          ]
-                        },
-                        {
-                          "rawMaterials": 7
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "ProductPart",
-                  "shieldValue": 30,
-                  "productPartName": "Plastic Band",
-                  "children": [
-                    {
-                      "manufacturers": [
-                        {
-                          "ManufacturersCount": 6,
-                          "proofPoints": 40,
-                          "documents": 20,
-                          "documentsForproofPrint": 15
-                        },
-                        {
-                          "processors": [
-                            {
-                              "processorsCount": 9,
-                              "proofPoints": 40,
-                              "documents": 20
-                            }
-                          ]
-                        },
-                        {
-                          "rawMaterials": 7
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "ProductPart",
-                  "shieldValue": 30,
-                  "productPartName": "Plastic Band",
-                  "children": [
-                    {
-                      "manufacturers": [
-                        {
-                          "ManufacturersCount": 6,
-                          "proofPoints": 40,
-                          "documents": 20,
-                          "documentsForproofPrint": 15
-                        },
-                        {
-                          "processors": [
-                            {
-                              "processorsCount": 9,
-                              "proofPoints": 40,
-                              "documents": 20
-                            }
-                          ]
-                        },
-                        {
-                          "rawMaterials": 7
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "title": "ProductPart",
-                  "shieldValue": 30,
-                  "productPartName": "Plastic Band",
-                  "children": [
-                    {
-                      "manufacturers": [
-                        {
-                          "ManufacturersCount": 6,
-                          "proofPoints": 40,
-                          "documents": 20,
-                          "documentsForproofPrint": 15
-                        },
-                        {
-                          "processors": [
-                            {
-                              "processorsCount": 9,
-                              "proofPoints": 40,
-                              "documents": 20
-                            }
-                          ]
-                        },
-                        {
-                          "rawMaterials": 7
-                        }
-                      ]
+                      "title": "Iron Smelter & Mine",
+                      "shieldValue": 12,
+                      "shieldImage": "./assets/shield.png",
+                      "value": "No information provided",
+                      "editLogo": "./assets/edit.png"
                     }
                   ]
                 }
               ]
             }
           ]
+        },
+        {
+            "title": "ProductPart L2 1",
+            "shieldValue": 30,
+            "shieldImage": "./assets/shield.png",
+            "flagImage": "./assets/au.png",
+            "editLogo": "./assets/edit.png",
+            "company1name": "Company 1 Ltd.",
+            "company2name": "Company 2 Ltd.",
+            "seeMoreLogo": "./assets/down.png",
+            "productPartName": "Copper Coil",
+            "ManufacturersCount": 6,
+            "proofPointsM": 40,
+            "documentsM": 20,
+            "documentsForproofPrint": 15,
+            "processorsCount": 9,
+            "proofPointsP": 40,
+            "documentsP": 20,
+            "rawMaterials": 7
+        },
+        {
+            "title": "Product Part L2 2",
+            "shieldValue": 30,
+            "flagImage": "./assets/au.png",
+            "editLogo": "./assets/edit.png",
+            "company1name": "Company 1 Ltd.",
+            "company2name": "Company 2 Ltd.",
+            "seeMoreLogo": "./assets/down.png",
+            "shieldImage": "./assets/shield.png",
+            "productPartName": "Plastic Band",
+            "ManufacturersCount": 6,
+            "proofPointsM": 40,
+            "documentsM": 20,
+            "documentsForproofPrint": 15,
+            "processorsCount": 9,
+            "proofPointsP": 40,
+            "documentsP": 20,
+            "rawMaterials": 7
+        },
+        {
+            "title": "Product Part L2 3",
+            "shieldValue": 30,
+            "shieldImage": "./assets/shield.png",
+            "flagImage": "./assets/au.png",
+            "editLogo": "./assets/edit.png",
+            "company1name": "Company 1 Ltd.",
+            "company2name": "Company 2 Ltd.",
+            "seeMoreLogo": "./assets/down.png",
+            "productPartName": "Plastic Band2",
+            "ManufacturersCount": 6,
+            "proofPointsM": 40,
+            "documentsM": 20,
+            "documentsForproofPrint": 15,
+            "processorsCount": 9,
+            "proofPointsP": 40,
+            "documentsP": 20,
+            "rawMaterials": 7
+        },
+        {
+            "title": "ProductPart L2 4",
+            "shieldValue": 30,
+            "shieldImage": "./assets/shield.png",
+            "flagImage": "./assets/au.png",
+            "editLogo": "./assets/edit.png",
+            "company1name": "Company 1 Ltd.",
+            "company2name": "Company 2 Ltd.",
+            "seeMoreLogo": "./assets/down.png",
+            "productPartName": "Plastic Band3",
+            "ManufacturersCount": 6,
+            "proofPointsM": 40,
+            "documentsM": 20,
+            "documentsForproofPrint": 15,
+            "processorsCount": 9,
+            "proofPoints": 40,
+            "documents": 20,
+            "rawMaterials": 7
         }
-      ]
-    }
+    ]
+    }]
   }
-]
+}]
