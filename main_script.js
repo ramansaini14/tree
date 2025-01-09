@@ -145,6 +145,7 @@ function boxDataRec(data, iterator, type) {
       // if(){
 
       // }
+      if(!dataAccessor.ManufacturersCount){
       let l2Box = `<div class="subBox" style="display: inline-block;">
     <div class="bluebox">
         <h3>${dataAccessor.title}</h3>
@@ -189,7 +190,63 @@ function boxDataRec(data, iterator, type) {
         </div>
         `);
     }
-    
+    else{
+      let l2Box = `<div class="subBox" style="display: inline-block;">
+    <div class="bluebox">
+        <h3>${dataAccessor.title}</h3>
+        <div class="bundle">
+            <img class="icon" src="${dataAccessor.shieldImage}" alt="">
+            <p>${dataAccessor.shieldValue}</p>
+        </div>
+    </div>
+    <div class="whiteBox">
+        <div class="flex">
+            <div class="left">
+                <p>Copper Coil</p>
+            </div>
+            <div class="right">
+                <img class="icon" src="${dataAccessor.editLogo}" alt="">
+                <p>Edit</p>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div class="left">
+                <div class="manufacturers">
+                <h6>${dataAccessor.ManufacturersCount} parts manufacturers</h6>
+                <p>${dataAccessor.proofPointsM} proofpoints</p>
+                <p>${dataAccessor.documentsM} </p>
+                </div>
+
+                <div class="processors">
+                <h6>${dataAccessor.processorsCount} materials processors</h6>
+                <p>${dataAccessor.proofPointsP} proofpoints</p>
+                <p>${dataAccessor.documentsP} </p>
+                </div>
+                <h6>${dataAccessor.rawMaterials} raw materials</h6>
+                
+            </div>
+            <div class="right">
+                <p>${dataAccessor.documentsForproofPrintM}</p>
+                <p>${dataAccessor.documentsForproofPrintP} </p>
+                <p>${dataAccessor.documentsForproofPrintR}</p>
+            </div>
+        </div>
+            </div>
+                <div class="seeMore">
+                    <p class="changeText">See less</p>
+                    <img class="changeImage" src="${dataAccessor.seeMoreLogo}" alt="">
+                </div>
+            </div>`;
+      $(".subChildren").append(`<div class="cb${i}" id="${i+1}" data_sub_id="1">${l2Box}</div>`);
+      $(`.cb${i}`).before(`
+        <div class="smBox">
+        <img class="text-file-img" src="./assets/file-text.png" alt="">
+        <p>View ${data[0].childLevel1.documentsCount} documents</p>
+        </div>
+        `);
+    }
+  }
   }
   
     // Level 3 -- Still Pending Data Appends
@@ -328,17 +385,14 @@ function boxDataRec(data, iterator, type) {
                               <div class="lev${j}">${l4Content}</div>
                           </div>`
                       );
-                      
-                  
-                  const l5Boxes = dataAccessor.child_l4Boxes[k];
-                  for (let l = 0; l < l5Boxes.length; l++) {
-                    console.log(l5Boxes);
-                    if(l5Boxes){
-                      let dataAccessor = l5Boxes[l].child_l5Boxes;
-                      console.log(dataAccessor);
-                    }
 
-                }
+                      //Work on last level here
+                      
+                      // const l5Boxes = dataAccessor.child_l4Boxes[0].child_l5Boxes;
+                      // console.log(Array.isArray(l5Boxes));
+                      // if(Array.isArray(dataAccessor.child_l4Boxes)){
+
+                      // }
               }
 
               }

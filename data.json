@@ -99,11 +99,13 @@
             "ManufacturersCount": 6,
             "proofPointsM": 40,
             "documentsM": 20,
-            "documentsForproofPrint": 15,
+            "documentsForproofPrintM": 15,
             "processorsCount": 9,
             "proofPointsP": 40,
             "documentsP": 20,
-            "rawMaterials": 7
+            "documentsForproofPrintP": 15,
+            "rawMaterials": 7,
+            "documentsForproofPrintR": 15
         },
         {
             "title": "Product Part L2 2",
@@ -119,11 +121,15 @@
             "ManufacturersCount": 6,
             "proofPointsM": 40,
             "documentsM": 20,
+            "documentsForproofPrintM": 15,
             "documentsForproofPrint": 15,
             "processorsCount": 9,
             "proofPointsP": 40,
             "documentsP": 20,
-            "rawMaterials": 7
+            "documentsForproofPrintP": 15,
+            "rawMaterials": 7,
+            "documentsForproofPrintR": 15
+            
         },
         {
             "title": "Product Part L2 3",
@@ -139,11 +145,14 @@
             "ManufacturersCount": 6,
             "proofPointsM": 40,
             "documentsM": 20,
+            "documentsForproofPrintM": 15,
             "documentsForproofPrint": 15,
             "processorsCount": 9,
             "proofPointsP": 40,
             "documentsP": 20,
-            "rawMaterials": 7
+            "documentsForproofPrintP": 15,
+            "rawMaterials": 7,
+            "documentsForproofPrintR": 15
         },
         {
             "title": "ProductPart L2 4",
@@ -159,11 +168,14 @@
             "ManufacturersCount": 6,
             "proofPointsM": 40,
             "documentsM": 20,
+            "documentsForproofPrintM": 15,
             "documentsForproofPrint": 15,
             "processorsCount": 9,
             "proofPoints": 40,
-            "documents": 20,
-            "rawMaterials": 7
+            "documentsP": 20,
+            "documentsForproofPrintP": 15,
+            "rawMaterials": 7,
+            "documentsForproofPrintR": 15
         }
     ]
     }]
