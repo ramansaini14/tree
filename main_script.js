@@ -256,149 +256,164 @@ function boxDataRec(data, iterator, type) {
           $(`.cb${i}`).append(`<div class="d${i}"></div>`);
           
           const l3Boxes = l2Boxes[i].child_l3Boxes;
-          // console.log(l2Boxes.length);
-          if(l3Boxes){
-          for (let j = 0; j < l3Boxes.length; j++) {
-              const dataAccessor = l3Boxes[j];
-              
-              let l3Box = `<div class="subBox" style="display: inline-block;">
-                  <div class="bluebox">
-                      <h3>${dataAccessor.title}</h3>
-                      <div class="bundle">
-                          <img class="icon" src="${dataAccessor.shieldImage}" alt="">
-                          <p>${dataAccessor.shieldValue}</p>
-                      </div>
-                  </div>`;
+          if (l3Boxes) {
+              for (let j = 0; j < l3Boxes.length; j++) {
+                  const dataAccessor = l3Boxes[j];
+                  
+                  let l3Box = `<div class="subBox" style="display: inline-block;">
+                      <div class="bluebox">
+                          <h3>${dataAccessor.title}</h3>
+                          <div class="bundle">
+                              <img class="icon" src="${dataAccessor.shieldImage}" alt="">
+                              <p>${dataAccessor.shieldValue}</p>
+                          </div>
+                      </div>`;
+      
+                  if (dataAccessor.company1name) {
+                      l3Box += `<div class="whiteBox">
+                          <div class="flex">
+                              <div class="left">
+                                  <img src="${dataAccessor.flagImage}" alt="">
+                                  <p>${dataAccessor.company1name}</p>
+                              </div>
+                              <div class="right">
+                                  <img class="icon" src="${dataAccessor.editLogo}" alt="">
+                                  <p>Edit</p>
+                              </div>
+                          </div>
+                          <div class="flex">
+                              <div class="left">
+                                  <img src="${dataAccessor.flagImage}" alt="">
+                                  <p>${dataAccessor.company2name}</p>
+                              </div>
+                              <div class="right">
+                                  <img class="icon" src="${dataAccessor.editLogo}" alt="">
+                                  <p>Edit</p>
+                              </div>
+                          </div>
+                      </div>`;
+                  } else {
+                      l3Box += `<div class="whiteBox">
+                          <div class="flex">
+                              <div class="left">
+                                  <p>${dataAccessor.value || "No information provided"}</p>
+                              </div>
+                              <div class="right">
+                                  <img class="icon" src="${dataAccessor.editLogo}" alt="">
+                                  <p>Add</p>
+                              </div>
+                          </div>
+                      </div>`;
+                  }
+                  l3Box += `</div>`; 
+                  
+                  $(`.d${i}`).append(`
+                      <div class="subContainer${j}">
+                      <div class="lev${j}">${l3Box}</div>
+                      </div>`
+                  );
   
-              if (dataAccessor.company1name) {
-                  l3Box += `<div class="whiteBox">
-                      <div class="flex">
-                          <div class="left">
-                              <img src="${dataAccessor.flagImage}" alt="">
-                              <p>${dataAccessor.company1name}</p>
-                          </div>
-                          <div class="right">
-                              <img class="icon" src="${dataAccessor.editLogo}" alt="">
-                              <p>Edit</p>
-                          </div>
-                      </div>
-                      <div class="flex">
-                          <div class="left">
-                              <img src="${dataAccessor.flagImage}" alt="">
-                              <p>${dataAccessor.company2name}</p>
-                          </div>
-                          <div class="right">
-                              <img class="icon" src="${dataAccessor.editLogo}" alt="">
-                              <p>Edit</p>
-                          </div>
-                      </div>
-                  </div>`;
-              } else {
-                  l3Box += `<div class="whiteBox">
-                      <div class="flex">
-                          <div class="left">
-                              <p>${dataAccessor.value || "No information provided"}</p>
-                          </div>
-                          <div class="right">
-                              <img class="icon" src="${dataAccessor.editLogo}" alt="">
-                              <p>Add</p>
-                          </div>
-                      </div>
-                  </div>`;
-              }
-              l3Box += `</div>`; 
-              
-              $(`.d${i}`).append(`
-                <div class="smBox">
-                <img class="text-file-img" src="./assets/file-text.png" alt="">
-                <p>View ${data[0].childLevel1.documentsCount} documents</p>
-                </div>
-                `);
-              $(`.d${i}`).append(`
-                <div class="subContainer${j}">
-                <div class="lev${j}">${l3Box}</div>
-                </div>`
-              );
+                  // Fourth level (l4Boxes)
+// fourth level (l4Boxes)
+if (Array.isArray(dataAccessor.child_l4Boxes)) {
+  const l4Boxes = dataAccessor.child_l4Boxes;
+  for (let k = 0; k < l4Boxes.length; k++) {
+      const l4Box = l4Boxes[k];
+      let l4Content = `<div class="subBox" style="display: inline-block;">
+          <div class="bluebox">
+              <h4>${l4Box.title}</h4>
+              <div class="bundle">
+                  <img class="icon" src="${l4Box.shieldImage}" alt="">
+                  <p>${l4Box.shieldValue}</p>
+              </div>
+          </div>`;
 
-              // fourth level (l4Boxes)
-              if (Array.isArray(dataAccessor.child_l4Boxes)) {
-                  const l4Boxes = dataAccessor.child_l4Boxes;
-                  for (let k = 0; k < l4Boxes.length; k++) {
-                      const l4Box = l4Boxes[k];
-                      let l4Content = `<div class="subBox" style="display: inline-block;">
-                          <div class="bluebox">
-                              <h4>${l4Box.title}</h4>
-                              <div class="bundle">
-                                  <img class="icon" src="${l4Box.shieldImage}" alt="">
-                                  <p>${l4Box.shieldValue}</p>
-                              </div>
-                          </div>`;
-  
-                      if (l4Box.company1name) {
-                          l4Content += `<div class="whiteBox">
-                              <div class="flex">
-                                  <div class="left">
-                                      <img src="${l4Box.flagImage}" alt="">
-                                      <p>${l4Box.company1name}</p>
-                                  </div>
-                                  <div class="right">
-                                      <img class="icon" src="${l4Box.editLogo}" alt="">
-                                      <p>Edit</p>
-                                  </div>
-                              </div>
-                              <div class="flex">
-                                  <div class="left">
-                                      <img src="${l4Box.flagImage}" alt="">
-                                      <p>${l4Box.company2name}</p>
-                                  </div>
-                                  <div class="right">
-                                      <img class="icon" src="${l4Box.editLogo}" alt="">
-                                      <p>Edit</p>
-                                  </div>
-                              </div>
-                          </div>`;
-                      } else {
-                          l4Content += `<div class="whiteBox">
-                              <div class="flex">
-                                  <div class="left">
-                                      <p>${l4Box.value || "No information provided"}</p>
-                                  </div>
-                                  <div class="right">
-                                      <img class="icon" src="${l4Box.editLogo}" alt="">
-                                      <p>Add</p>
-                                  </div>
-                              </div>
-                          </div>`;
-                      }
-                      l4Content += `</div>`; 
-  
-                      // Append the l4 content to the corresponding l3Box
-                      $(`.subContainer${j}`).append(`
-                          <div class="subCont${j}">
-                          
-                        
-                        <div class="smBox">
-                        <img class="text-file-img" src="./assets/file-text.png" alt="">
-                        <p>View ${data[0].childLevel1.documentsCount} documents</p>
-                        </div>
+      if (l4Box.company1name) {
+          l4Content += `<div class="whiteBox">
+              <div class="flex">
+                  <div class="left">
+                      <img src="${l4Box.flagImage}" alt="">
+                      <p>${l4Box.company1name}</p>
+                  </div>
+                  <div class="right">
+                      <img class="icon" src="${l4Box.editLogo}" alt="">
+                      <p>Edit</p>
+                  </div>
+              </div>
+              <div class="flex">
+                  <div class="left">
+                      <img src="${l4Box.flagImage}" alt="">
+                      <p>${l4Box.company2name}</p>
+                  </div>
+                  <div class="right">
+                      <img class="icon" src="${l4Box.editLogo}" alt="">
+                      <p>Edit</p>
+                  </div>
+              </div>
+          </div>`;
+      } else {
+          l4Content += `<div class="whiteBox">
+              <div class="flex">
+                  <div class="left">
+                      <p>${l4Box.value || "No information provided"}</p>
+                  </div>
+                  <div class="right">
+                      <img class="icon" src="${l4Box.editLogo}" alt="">
+                      <p>Add</p>
+                  </div>
+              </div>
+          </div>`;
+      }
+      l4Content += `</div>`; 
 
-                              <div class="lev${j}">${l4Content}</div>
-                          </div>`
-                      );
+      // Append the l4 content to the corresponding l3Box
+      $(`.subContainer${j}`).append(`
+          <div class="subCont${j}">
+              <div class="lev${j}">${l4Content}</div>
+          </div>`);
 
-                      //Work on last level here
-                      
-                      // const l5Boxes = dataAccessor.child_l4Boxes[0].child_l5Boxes;
-                      // console.log(Array.isArray(l5Boxes));
-                      // if(Array.isArray(dataAccessor.child_l4Boxes)){
+      // fifth level (l5Boxes)
+if (Array.isArray(l4Box.child_l5Boxes)) {
+  const l5Boxes = l4Box.child_l5Boxes;
+  for (let l = 0; l < l5Boxes.length; l++) {
+      const l5Box = l5Boxes[l];
+      let l5Content = `<div class="subBox" style="display: inline-block;">
+          <div class="bluebox">
+              <h5>${l5Box.title}</h5>
+              <div class="bundle">
+                  <img class="icon" src="${l5Box.shieldImage}" alt="">
+                  <p>${l5Box.shieldValue}</p>
+              </div>
+          </div>`;
 
-                      // }
-              }
+      if (l5Box.value) {
+          l5Content += `<div class="whiteBox">
+              <div class="flex">
+                  <div class="left">
+                      <p>${l5Box.value}</p>
+                  </div>
+                  <div class="right">
+                      <img class="icon" src="${l5Box.editLogo}" alt="">
+                      <p>Add</p>
+                  </div>
+              </div>
+          </div>`;
+      }
+
+      l5Content += `</div>`;
+
+      const l4Container = $(`.subCont${j} .lev${j}:eq(${l})`);
+      l4Container.append(`
+          <div class="lev${j}">${l5Content}</div>
+      `);
+  }
+}
+
+  }
+}
 
               }
           }
-        }
       }
   }
-  
 }
