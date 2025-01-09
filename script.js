@@ -149,7 +149,7 @@ const box = (data, level) => {
         <div class="subContainer">
             <div class="lev${2 * i - 1}">${htmlBox}</div>
             <div class="lev${2 * i}">${htmlBox}</div>
-        </div>
+        </div>x
     `);
 
     }

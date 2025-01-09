@@ -99,8 +99,9 @@ body {
 .flex {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: 6px;
+  flex-direction: row;
+  /* width: 100%;
+  margin-bottom: 6px; */
 }
 
 /* .Children {
@@ -200,14 +201,32 @@ main {
 .subContainer{
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.subChildren {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.d0{
+  display: flex;
+  gap: 20px;
+}
+.subContainer0{
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.subContainer1{
+  height: 369px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-.subChildren > div{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin: 5px;
-}
