@@ -129,6 +129,7 @@ function boxDataRec(data, iterator, type) {
                     </div>
                     </div>
                 </div>`;
+                
         $(".child").append(l1Box);
         
     }
