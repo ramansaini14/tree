@@ -2,8 +2,13 @@ $.ajax({
   url: "./data.json",
   type: "GET",
   success: function (data) {
-    showData(data);
-  },
+    setTimeout(() => {
+        showData(data);
+    }, 2000);
+    setInterval(() => {
+        $(".center").hide();
+    }, 2000);
+  }
 });
 
 function showData(data) {
@@ -135,7 +140,7 @@ function boxDataRec(data, iterator, type) {
     }
     
   }
-  //   Level 2 -- Pending Leaving Data of visual timeline 
+  //   Level 2 -- Pending Leaving Data of visual timeline change on append
   if (type == "l2") {
     for (let i = 0; i < iterator; i++) {
       let dataAccessor = data[0].childLevel1.child_l1Box1[0].child_l2Boxes[i];
@@ -178,7 +183,7 @@ function boxDataRec(data, iterator, type) {
         </div>
             </div>
                 <div class="seeMore">
-                    <p class="changeText">See less</p>
+                    <p class="changeText">See more</p>
                     <img class="changeImage" src="${dataAccessor.seeMoreLogo}" alt="">
                 </div>
             </div>`;
@@ -234,7 +239,7 @@ function boxDataRec(data, iterator, type) {
         </div>
             </div>
                 <div class="seeMore">
-                    <p class="changeText">See less</p>
+                    <p class="changeText">See more</p>
                     <img class="changeImage" src="${dataAccessor.seeMoreLogo}" alt="">
                 </div>
             </div>`;
@@ -249,7 +254,7 @@ function boxDataRec(data, iterator, type) {
   }
   }
   
-    // Level 3 -- Still Pending Data Appends
+    // Level 3 
     if (type === "l3") {
       const l2Boxes = data[0].childLevel1.child_l1Box1[0].child_l2Boxes;
       for (let i = 0; i < l2Boxes.length; i++) {
@@ -296,7 +301,7 @@ function boxDataRec(data, iterator, type) {
                       l3Box += `<div class="whiteBox">
                           <div class="flex">
                               <div class="left">
-                                  <p>${dataAccessor.value || "No information provided"}</p>
+                                  <p>${dataAccessor.value}</p>
                               </div>
                               <div class="right">
                                   <img class="icon" src="${dataAccessor.editLogo}" alt="">
@@ -312,6 +317,12 @@ function boxDataRec(data, iterator, type) {
                       <div class="lev${j}">${l3Box}</div>
                       </div>`
                   );
+                  $(`.subContainer${i}`).before(`
+                    <div class="smBox">
+                    <img class="text-file-img" src="./assets/file-text.png" alt="">
+                    <p>View ${data[0].childLevel1.documentsCount} documents</p>
+                    </div>
+                    `);
   
                   // Fourth level (l4Boxes)
 // fourth level (l4Boxes)
@@ -371,6 +382,7 @@ if (Array.isArray(dataAccessor.child_l4Boxes)) {
           <div class="subCont${j}">
               <div class="lev${j}">${l4Content}</div>
           </div>`);
+          
 
       // fifth level (l5Boxes)
 if (Array.isArray(l4Box.child_l5Boxes)) {
@@ -406,14 +418,12 @@ if (Array.isArray(l4Box.child_l5Boxes)) {
       l4Container.append(`
           <div class="lev${j}">${l5Content}</div>
       `);
-  }
-}
-
-  }
-}
-
-              }
-          }
-      }
-  }
+                    }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

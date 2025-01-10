@@ -1,0 +1,39 @@
+$(".subBox").click(function(){
+    let parent_id = $(this).attr("data-parentid");
+    $(this).closest(".l2").find(`[data-subid="${parent_id}"]`).toggle();
+});
+
+<div class="as l2">
+    <div class="parent">
+        <div class="subBox sub"></div>
+        <div class="subBox sub"></div>
+    </div>
+</div>
+
+{
+    "id" : 1,
+    "parent_id" : "1",
+    "title": "Product assembly",
+    "child":[
+        {
+            "id" : 2,
+            "sub_id" : "1",
+            "title": "Magnetic Steel",   
+        },
+        {
+            "id" : 2,
+            "sub_id" : "1",
+            "title": "ProductPart",   
+        },
+        {
+            "id" : 2,
+            "sub_id" : "1",
+            "title": "Magnetic Steel",   
+        },
+        {
+            "id" : 2,
+            "sub_id" : "1",
+            "title": "Magnetic Steel",   
+        },
+    ]
+}
